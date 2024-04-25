@@ -24,7 +24,7 @@ class Game24Task(Task):
         6 * 4 = 24 (left: 24)
         (1 + 2 + 3) * 4 = 24
     """
-    def __init__(self, file='24.csv'):
+    def __init__(self, file='24.csv', steps=4):
         """
         file: a csv file (fixed)
         """
@@ -32,7 +32,7 @@ class Game24Task(Task):
         path = os.path.join(DATA_PATH, '24', file)
         self.data = list(pd.read_csv(path)['Puzzles'])
         self.value_cache = {}
-        self.steps = 4
+        self.steps = steps
         self.stops = ['\n'] * 4
 
     def __len__(self) -> int:
